@@ -5,10 +5,10 @@ from django.utils import timezone
 
 class GhostPost(VoteModel, models.Model):
     body = models.CharField(max_length=280)
-    likes = models.IntegerField()
-    dislikes = models.IntegerField()
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
     boast = models.BooleanField()
-    created_date = models.DateTimeField('date created', default=timezone.now)
+    created_date = models.DateTimeField(default=timezone.now)
 
 
     def __str__(self):

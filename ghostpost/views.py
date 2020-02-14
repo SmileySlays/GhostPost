@@ -38,9 +38,6 @@ def ghostpost_add_view(request):
             data = form.cleaned_data
             GhostPost.objects.create(
                 body=data['body'],
-                likes=0,
-                dislikes=0,
-                created_date=data['created_date'],
                 boast=data['boast']
             )
             return HttpResponseRedirect(reverse("homepage"))
